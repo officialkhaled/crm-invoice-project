@@ -29,7 +29,7 @@
 
                             <div class="mb-3">
                                 <label for="name">Permission Name</label>
-                                <input type="text" name="name" value="{{ $permission->name }}" class="form-control"/>
+                                <input type="text" name="name" value="{{ $permission->name }}" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-2 mt-4 flex justify-center">
                                 <button type="submit" class="btn btn-sm btn-success">

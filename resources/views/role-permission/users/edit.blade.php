@@ -42,7 +42,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="">Roles</label>
-                                <select name="roles[]" class="form-control rounded-md" multiple>
+                                <select name="roles[]" class="form-control rounded-md select2" multiple>
                                     <option value="">Select Role</option>
                                     @foreach ($roles as $role)
                                         <option value="{{ $role }}" {{ in_array($role, $userRoles) ? 'selected':'' }}>
@@ -63,5 +63,18 @@
             </div>
         </div>
     </div>
+
+    @section('scripts')
+        <script>
+            $.fn.select2.defaults.set("theme", "bootstrap-5");
+            $.fn.select2.defaults.set("placeholder", "Select");
+
+            $(document).ready(function () {
+                $('.select2').select2({
+                    allowClear: false,
+                });
+            });
+        </script>
+    @endsection
 
 </x-app-layout>
