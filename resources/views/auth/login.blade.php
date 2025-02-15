@@ -4,12 +4,12 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        @env('local')
-            <div class="mt-4 mb-4 flex justify-evenly flex-row">
-                <x-login-link email="admin@gmail.com" label="Admin" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>
-                <x-login-link email="user@gmail.com" label="Regular User" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>
-            </div>
-        @endenv
+{{--        @env('local')--}}
+{{--            <div class="mt-4 mb-4 flex justify-evenly flex-row">--}}
+{{--                <x-login-link email="admin@gmail.com" label="Admin" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>--}}
+{{--                <x-login-link email="user@gmail.com" label="Regular User" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>--}}
+{{--            </div>--}}
+{{--        @endenv--}}
 
         <div>
             <x-input-label for="email" :value="__('Email')"/>

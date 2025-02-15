@@ -1,17 +1,5 @@
 <x-app-layout>
 
-    <div class="container mt-4">
-        <a href="{{ route('permissions.index') }}" class="btn btn-primary btn-sm mx-1">
-            <i class="fa-solid fa-key opacity-75"></i>&nbsp;&nbsp;Permissions
-        </a>
-        <a href="{{ route('roles.index') }}" class="btn btn-warning btn-sm mx-1">
-            <i class="fa-solid fa-person-circle-question opacity-75"></i>&nbsp;&nbsp;Roles
-        </a>
-        <a href="{{ route('users.index') }}" class="btn btn-success btn-sm mx-1">
-            <i class="fa-solid fa-user-group opacity-75"></i>&nbsp;&nbsp;Users
-        </a>
-    </div>
-
     <div class="container mt-2">
         <div class="row">
             <div class="col-md-12">
@@ -35,9 +23,9 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th class="text-center">ID</th>
+                                <th class="text-center" width="10%">ID</th>
                                 <th>Name</th>
-                                <th width="40%" class="text-center">Action</th>
+                                <th width="30%" class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -62,7 +50,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

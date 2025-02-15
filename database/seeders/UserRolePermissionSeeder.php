@@ -11,12 +11,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserRolePermissionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        // Create Permissions
         Permission::create(['name' => 'view role']);
         Permission::create(['name' => 'create role']);
         Permission::create(['name' => 'update role']);
@@ -43,7 +39,6 @@ class UserRolePermissionSeeder extends Seeder
         $userRole = Role::create(['name' => 'user']);
 
         $allPermissionNames = Permission::pluck('name')->toArray();
-
         $superAdminRole->givePermissionTo($allPermissionNames);
 
         $adminRole->givePermissionTo(['create role', 'view role', 'update role']);
@@ -53,13 +48,12 @@ class UserRolePermissionSeeder extends Seeder
 
 
         $superAdminUser = User::firstOrCreate([
-            'email' => 'superadmin@gmail.com',
+            'email' => 'super@gmail.com',
         ], [
             'name' => 'Super Admin',
-            'email' => 'superadmin@gmail.com',
+            'email' => 'super@gmail.com',
             'password' => Hash::make('123456'),
         ]);
-
         $superAdminUser->assignRole($superAdminRole);
 
 
@@ -70,7 +64,6 @@ class UserRolePermissionSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123456'),
         ]);
-
         $adminUser->assignRole($adminRole);
 
 
@@ -81,7 +74,6 @@ class UserRolePermissionSeeder extends Seeder
             'email' => 'user@gmail.com',
             'password' => Hash::make('123456'),
         ]);
-
         $user->assignRole($userRole);
     }
 }

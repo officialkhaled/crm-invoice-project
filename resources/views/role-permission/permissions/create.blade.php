@@ -27,9 +27,9 @@
 
                             <div class="mb-3">
                                 <label for="name">Permission Name</label>
-                                <input type="text" name="name" class="form-control"/>
+                                <input type="text" name="name" id="name" class="form-control"/>
                             </div>
-                            <div class="mb-3 flex justify-center">
+                            <div class="mb-2 mt-4 flex justify-center">
                                 <button type="submit" class="btn btn-sm btn-success">
                                     <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Save
                                 </button>
