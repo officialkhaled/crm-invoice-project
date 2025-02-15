@@ -14,7 +14,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2><b>Edit Role</b>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Edit Role</b>
                             <a href="{{ url('roles') }}" class="btn btn-sm btn-danger float-end">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>
@@ -29,8 +30,8 @@
                                 <label for="name">Role Name</label>
                                 <input type="text" name="name" value="{{ $role->name }}" class="form-control"/>
                             </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-sm btn-primary">
+                            <div class="mb-2 mt-4 flex justify-center">
+                                <button type="submit" class="btn btn-sm btn-success">
                                     <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Update
                                 </button>
                             </div>

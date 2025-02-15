@@ -1,11 +1,11 @@
-<x-app-web-layout>
+<x-app-layout>
 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
 
                 @if ($errors->any())
-                    <ul class="alert alert-warning">
+                    <ul class="alert alert-warning mt-2">
                         @foreach ($errors->all() as $error)
                             <li>{{$error}}</li>
                         @endforeach
@@ -14,20 +14,25 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Create Role
-                            <a href="{{ url('roles') }}" class="btn btn-danger float-end">Back</a>
-                        </h4>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Create Role</b>
+                            <a href="{{ url('roles') }}" class="btn btn-sm btn-danger float-end">
+                                <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
+                            </a>
+                        </h2>
                     </div>
                     <div class="card-body">
                         <form action="{{ url('roles') }}" method="POST">
                             @csrf
 
                             <div class="mb-3">
-                                <label for="">Role Name</label>
-                                <input type="text" name="name" class="form-control"/>
+                                <label for="name">Role Name</label>
+                                <input type="text" name="name" class="form-control rounded-md"/>
                             </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                            <div class="mb-2 mt-4 flex justify-center">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Save
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -36,4 +41,4 @@
         </div>
     </div>
 
-</x-app-web-layout>
+</x-app-layout>

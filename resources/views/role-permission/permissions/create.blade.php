@@ -14,7 +14,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2><b>Create Permission</b>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Create Permission</b>
                             <a href="{{ url('permissions') }}" class="btn btn-sm btn-danger float-end">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>
@@ -27,7 +28,7 @@
 
                             <div class="mb-3">
                                 <label for="name">Permission Name</label>
-                                <input type="text" name="name" id="name" class="form-control"/>
+                                <input type="text" name="name" id="name" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-2 mt-4 flex justify-center">
                                 <button type="submit" class="btn btn-sm btn-success">

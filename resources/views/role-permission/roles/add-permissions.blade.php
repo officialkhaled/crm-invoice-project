@@ -5,17 +5,20 @@
             <div class="col-md-12">
 
                 @if (session('status'))
-                    <div class="alert alert-success">{{ session('status') }}</div>
+                    <div class="alert alert-success mt-2">{{ session('status') }}</div>
                 @endif
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Role : {{ $role->name }}
-                            <a href="{{ url('roles') }}" class="btn btn-danger float-end">Back</a>
-                        </h4>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Permissions</b>
+                            <a href="{{ url('roles') }}" class="btn btn-sm btn-danger float-end">
+                                <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
+                            </a>
+                        </h2>
                     </div>
-                    <div class="card-body">
 
+                    <div class="card-body">
                         <form action="{{ url('roles/'.$role->id.'/give-permissions') }}" method="POST">
                             @csrf
                             @method('PUT')
@@ -25,27 +28,26 @@
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
 
-                                <label for="">Permissions</label>
+                                <label for="permission" class="mb-2">
+                                    <b>Role: <span class="underline">{{ $role->name }}</span></b>
+                                </label>
 
                                 <div class="row">
                                     @foreach ($permissions as $permission)
                                         <div class="col-md-2">
                                             <label>
-                                                <input
-                                                    type="checkbox"
-                                                    name="permission[]"
-                                                    value="{{ $permission->name }}"
-                                                    {{ in_array($permission->id, $rolePermissions) ? 'checked':'' }}
-                                                />
+                                                <input type="checkbox" name="permission[]" value="{{ $permission->name }}"
+                                                    {{ in_array($permission->id, $rolePermissions) ? 'checked':'' }}/>
                                                 {{ $permission->name }}
                                             </label>
                                         </div>
                                     @endforeach
                                 </div>
-
                             </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                            <div class="mb-2 mt-4 flex justify-center">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Update
+                                </button>
                             </div>
                         </form>
                     </div>

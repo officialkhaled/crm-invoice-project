@@ -5,7 +5,7 @@
             <div class="col-md-12">
 
                 @if ($errors->any())
-                    <ul class="alert alert-warning">
+                    <ul class="alert alert-warning mt-2">
                         @foreach ($errors->all() as $error)
                             <li>{{$error}}</li>
                         @endforeach
@@ -14,9 +14,12 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Edit User
-                            <a href="{{ url('users') }}" class="btn btn-danger float-end">Back</a>
-                        </h4>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Edit User</b>
+                            <a href="{{ url('users') }}" class="btn btn-sm btn-danger float-end">
+                                <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
+                            </a>
+                        </h2>
                     </div>
                     <div class="card-body">
                         <form action="{{ url('users/'.$user->id) }}" method="POST">
@@ -25,35 +28,34 @@
 
                             <div class="mb-3">
                                 <label for="">Name</label>
-                                <input type="text" name="name" value="{{ $user->name }}" class="form-control"/>
+                                <input type="text" name="name" value="{{ $user->name }}" class="form-control rounded-md"/>
                                 @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="">Email</label>
-                                <input type="text" name="email" readonly value="{{ $user->email }}" class="form-control"/>
+                                <input type="text" name="email" readonly value="{{ $user->email }}" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-3">
                                 <label for="">Password</label>
-                                <input type="text" name="password" class="form-control"/>
+                                <input type="text" name="password" class="form-control rounded-md"/>
                                 @error('password') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="">Roles</label>
-                                <select name="roles[]" class="form-control" multiple>
+                                <select name="roles[]" class="form-control rounded-md" multiple>
                                     <option value="">Select Role</option>
                                     @foreach ($roles as $role)
-                                        <option
-                                            value="{{ $role }}"
-                                            {{ in_array($role, $userRoles) ? 'selected':'' }}
-                                        >
+                                        <option value="{{ $role }}" {{ in_array($role, $userRoles) ? 'selected':'' }}>
                                             {{ $role }}
                                         </option>
                                     @endforeach
                                 </select>
                                 @error('roles') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                            <div class="mb-2 mt-4 flex justify-center">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Update
+                                </button>
                             </div>
                         </form>
                     </div>

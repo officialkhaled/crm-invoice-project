@@ -14,7 +14,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2><b>Edit Permission</b>
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Edit Permission</b>
                             <a href="{{ url('permissions') }}" class="btn btn-sm btn-danger float-end">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>

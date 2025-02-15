@@ -10,7 +10,7 @@
 
                 <div class="card mt-3 mb-6">
                     <div class="card-header">
-                        <h2><b>Permissions</b>
+                        <h2 class="d-flex justify-content-between align-items-center"><b>Permissions</b>
                             @can('create permission')
                                 <a href="{{ route('permissions.create') }}" class="btn btn-sm btn-primary float-end">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add

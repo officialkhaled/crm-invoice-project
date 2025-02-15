@@ -1,66 +1,65 @@
 <x-app-layout>
 
-    <div class="container mt-5">
-        <a href="{{ url('roles') }}" class="btn btn-primary mx-1">Roles</a>
-        <a href="{{ url('permissions') }}" class="btn btn-info mx-1">Permissions</a>
-        <a href="{{ url('users') }}" class="btn btn-warning mx-1">Users</a>
-    </div>
-
     <div class="container mt-2">
         <div class="row">
             <div class="col-md-12">
 
                 @if (session('status'))
-                    <div class="alert alert-success">{{ session('status') }}</div>
+                    <div class="alert alert-success mt-2">{{ session('status') }}</div>
                 @endif
 
                 <div class="card mt-3">
                     <div class="card-header">
-                        <h4>Users
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            <b>Users</b>
                             @can('create user')
-                                <a href="{{ url('users/create') }}" class="btn btn-primary float-end">Add User</a>
+                                <a href="{{ url('users/create') }}" class="btn btn-sm btn-primary float-end">
+                                    <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add User
+                                </a>
                             @endcan
-                        </h4>
+                        </h2>
                     </div>
                     <div class="card-body">
-
                         <table class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>Id</th>
+                                <th class="text-center" width="6%">ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Roles</th>
-                                <th>Action</th>
+                                <th width="20%" class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
+                                    <td class="text-center">{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>
+                                    <td class="text-center">
                                         @if (!empty($user->getRoleNames()))
                                             @foreach ($user->getRoleNames() as $rolename)
                                                 <label class="badge bg-primary mx-1">{{ $rolename }}</label>
                                             @endforeach
                                         @endif
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         @can('update user')
-                                            <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-success">Edit</a>
+                                            <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-sm btn-success">
+                                                <i class="fa-solid fa-pen-to-square opacity-75"></i>&nbsp;&nbsp;Edit
+                                            </a>
                                         @endcan
 
                                         @can('delete user')
-                                            <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-danger mx-2">Delete</a>
+                                            <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-sm btn-danger">
+                                                <i class="fa-solid fa-trash opacity-75"></i>&nbsp;&nbsp;Delete
+                                            </a>
                                         @endcan
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
