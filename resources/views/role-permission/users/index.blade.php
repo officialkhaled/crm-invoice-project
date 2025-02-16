@@ -20,9 +20,9 @@
                         </h2>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
+                            <tr class="table-info">
                                 <th class="text-center" width="6%">ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -33,7 +33,7 @@
                             <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td class="text-center">{{ $user->id }}</td>
+                                    <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td class="text-center">

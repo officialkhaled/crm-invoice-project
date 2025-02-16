@@ -26,6 +26,11 @@
                             {{ __('Customers') }}
                         </x-nav-link>
                     @endcan
+                    @can('View Leads')
+                        <x-nav-link :href="route('leads.index')" :active="request()->is('leads*')">
+                            {{ __('Leads') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 

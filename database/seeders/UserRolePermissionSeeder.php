@@ -7,7 +7,6 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserRolePermissionSeeder extends Seeder
 {
@@ -28,10 +27,9 @@ class UserRolePermissionSeeder extends Seeder
         Permission::create(['name' => 'update user']);
         Permission::create(['name' => 'delete user']);
 
-        Permission::create(['name' => 'view product']);
-        Permission::create(['name' => 'create product']);
-        Permission::create(['name' => 'update product']);
-        Permission::create(['name' => 'delete product']);
+        Permission::create(['name' => 'View Customers']);
+        Permission::create(['name' => 'View Leads']);
+        Permission::create(['name' => 'View Tasks']);
 
 
         $superAdminRole = Role::create(['name' => 'super-admin']);

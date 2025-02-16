@@ -1,6 +1,6 @@
 @php
     $totalCustomers = \App\Models\Customer::query()->count();
-//    $totalLeads = \App\Models\Customer::query()->count();
+    $totalLeads = \App\Models\Lead::query()->count();
 //    $totalTasks = \App\Models\Customer::query()->count();
 //    $pendingTasks = \App\Models\Customer::query()->count();
 @endphp
@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-body font-bold text-3xl d-flex justify-content-between">
                             <i class="fa-solid fa-cubes-stacked"></i>
-                            {{ $totalCustomers }}
+                            {{ $totalLeads }}
                         </div>
                     </div>
                 </a>

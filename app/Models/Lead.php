@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
@@ -17,4 +18,9 @@ class Lead extends Model
         'status',
         'notes',
     ];
+
+    public function getSourceUrlAttribute($value): string
+    {
+        return Str::startsWith($value, ['http://', 'https://']) ? $value : 'https://' . $value;
+    }
 }

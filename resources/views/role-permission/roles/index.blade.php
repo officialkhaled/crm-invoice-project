@@ -21,9 +21,9 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
+                            <tr class="table-info">
                                 <th class="text-center" width="10%">ID</th>
                                 <th>Name</th>
                                 <th width="40%" class="text-center">Action</th>
@@ -32,7 +32,7 @@
                             <tbody>
                             @foreach ($roles as $role)
                                 <tr>
-                                    <td class="text-center">{{ $role->id }}</td>
+                                    <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td class="text-center">
                                         <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="btn btn-sm btn-warning shadow-sm">

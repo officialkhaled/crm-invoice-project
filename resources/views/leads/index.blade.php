@@ -10,9 +10,9 @@
 
                 <div class="card mt-3 mb-6">
                     <div class="card-header">
-                        <h2 class="d-flex justify-content-between align-items-center"><b>Customers</b>
+                        <h2 class="d-flex justify-content-between align-items-center"><b>Leads</b>
                             @can('create permission')
-                                <a href="{{ route('customers.create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
+                                <a href="{{ route('leads.create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add
                                 </a>
                             @endcan
@@ -27,31 +27,35 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Address</th>
-                                <th>Company</th>
+                                <th>Source</th>
+                                <th>Source URL</th>
                                 <th width="10%">Notes</th>
                                 <th width="10%" class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse($customers as $customer)
+                            @forelse($leads as $lead)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $customer->name }}</td>
-                                    <td>{{ $customer->email }}</td>
-                                    <td>{{ $customer->phone }}</td>
-                                    <td>{{ $customer->address }}</td>
-                                    <td>{{ $customer->company }}</td>
-                                    <td>{{ $customer->notes }}</td>
+                                    <td>{{ $lead->name }}</td>
+                                    <td>{{ $lead->email }}</td>
+                                    <td>{{ $lead->phone }}</td>
+                                    <td>{{ $lead->source }}</td>
+                                    <td>
+                                        <a href="{{ $lead->source_url }}" class="underline text-blue-600" target="_blank">
+                                            {{ $lead->source_url }}
+                                        </a>
+                                    </td>
+                                    <td>{{ $lead->notes }}</td>
                                     <td class="d-flex justify-content-center gap-1">
                                         @can('update permission')
-                                            <a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-sm btn-success shadow-sm"
+                                            <a href="{{ route('leads.edit', $lead->id) }}" class="btn btn-sm btn-success shadow-sm"
                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                                 <i class="fa-solid fa-pen-to-square opacity-75"></i>
                                             </a>
                                         @endcan
                                         @can('delete permission')
-                                            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
+                                            <form action="{{ route('leads.destroy', $lead->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button class="btn btn-sm btn-danger shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                                                     <i class="fa-solid fa-trash opacity-75"></i>

@@ -20,9 +20,9 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
+                            <tr class="table-info">
                                 <th class="text-center" width="10%">ID</th>
                                 <th>Name</th>
                                 <th width="30%" class="text-center">Action</th>
@@ -31,7 +31,7 @@
                             <tbody>
                             @foreach ($permissions as $permission)
                                 <tr>
-                                    <td class="text-center">{{ $permission->id }}</td>
+                                    <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $permission->name }}</td>
                                     <td class="text-center">
                                         @can('update permission')
