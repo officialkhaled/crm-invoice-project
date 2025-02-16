@@ -13,7 +13,7 @@
                         <h2 class="d-flex justify-content-between align-items-center">
                             <b>Users</b>
                             @can('create user')
-                                <a href="{{ url('users/create') }}" class="btn btn-sm btn-primary float-end">
+                                <a href="{{ url('users/create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add User
                                 </a>
                             @endcan
@@ -45,13 +45,13 @@
                                     </td>
                                     <td class="text-center">
                                         @can('update user')
-                                            <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-sm btn-success">
+                                            <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-sm btn-success shadow-sm">
                                                 <i class="fa-solid fa-pen-to-square opacity-75"></i>&nbsp;&nbsp;Edit
                                             </a>
                                         @endcan
 
                                         @can('delete user')
-                                            <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-sm btn-danger">
+                                            <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-sm btn-danger shadow-sm">
                                                 <i class="fa-solid fa-trash opacity-75"></i>&nbsp;&nbsp;Delete
                                             </a>
                                         @endcan

@@ -16,7 +16,7 @@
                     <div class="card-header">
                         <h2 class="d-flex justify-content-between align-items-center">
                             <b>Edit User</b>
-                            <a href="{{ url('users') }}" class="btn btn-sm btn-danger float-end">
+                            <a href="{{ url('users') }}" class="btn btn-sm btn-danger float-end shadow-sm">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>
                         </h2>
@@ -52,9 +52,12 @@
                                 </select>
                                 @error('roles') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
-                            <div class="mb-2 mt-4 flex justify-center">
-                                <button type="submit" class="btn btn-sm btn-success">
+                            <div class="mb-2 mt-4 flex justify-center gap-1">
+                                <button type="submit" class="btn btn-sm btn-success shadow-sm">
                                     <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Update
+                                </button>
+                                <button type="button" class="btn btn-sm btn-warning shadow-sm" onclick="pageRefresh()">
+                                    <i class="fa-solid fa-arrows-rotate opacity-75"></i>&nbsp;&nbsp;Refresh
                                 </button>
                             </div>
                         </form>

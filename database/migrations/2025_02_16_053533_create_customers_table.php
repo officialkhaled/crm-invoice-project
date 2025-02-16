@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->text('address')->nullable();
             $table->string('company')->nullable();
             $table->text('notes')->nullable();
+            $table->string('avatar')->nullable();
 
             $table->timestamps();
         });

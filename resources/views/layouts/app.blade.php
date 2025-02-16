@@ -25,7 +25,7 @@
 
     @if (isset($header))
         <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
         </header>
@@ -46,9 +46,9 @@
     $.fn.select2.defaults.set("theme", "bootstrap-5");
     $.fn.select2.defaults.set("placeholder", "Select");
 
-    function previewImage(event) {
+    function previewAvatar(event) {
         const input = event.target;
-        const preview = document.getElementById('preview');
+        const preview = document.getElementById('preview_avatar');
 
         if (input.files && input.files[0]) {
             const reader = new FileReader();
@@ -59,6 +59,10 @@
 
             reader.readAsDataURL(input.files[0]);
         }
+    }
+
+    function pageRefresh() {
+        window.location.reload();
     }
 </script>
 
