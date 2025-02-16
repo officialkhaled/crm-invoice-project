@@ -36,7 +36,7 @@ class LeadController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'source' => $request->source,
-            'source_url' => '//' . $request->source_url,
+            'source_url' => $request->source_url,
             'notes' => $request->notes
         ]);
 
