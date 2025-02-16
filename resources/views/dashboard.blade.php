@@ -1,8 +1,8 @@
 @php
     $totalCustomers = \App\Models\Customer::query()->count();
     $totalLeads = \App\Models\Lead::query()->count();
-//    $pendingTasks = \App\Models\Task::query()->where('status', '')->count();
-//    $totalTasks = \App\Models\Task::query()->count();
+    $pendingTasks = \App\Models\Task::query()->where('status', 'Pending')->count();
+    $totalTasks = \App\Models\Task::query()->count();
 @endphp
 
 <x-app-layout>
@@ -27,8 +27,8 @@
                         <i class="fa-solid fa-users text-2xl text-red-500"></i>
                     </div>
                     <div class="flex justify-end flex-col">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Total Customers</h2>
-                        <h2 class="text-2xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalCustomers }}</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Total Customers</h2>
+                        <h2 class="text-xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalCustomers }}</h2>
                     </div>
                 </a>
             </div>
@@ -40,8 +40,8 @@
                         <i class="fa-solid fa-cubes-stacked text-2xl text-red-500"></i>
                     </div>
                     <div class="flex justify-end flex-col">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Total Leads</h2>
-                        <h2 class="text-2xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalLeads }}</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Total Leads</h2>
+                        <h2 class="text-xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalLeads }}</h2>
                     </div>
                 </a>
             </div>
@@ -53,8 +53,8 @@
                         <i class="fa-solid fa-clock-rotate-left text-2xl text-red-500"></i>
                     </div>
                     <div class="flex justify-end flex-col">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Pending Tasks</h2>
-                        <h2 class="text-2xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalCustomers }}</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Pending Tasks</h2>
+                        <h2 class="text-xl font-semibold text-right text-gray-900 dark:text-white">{{ $pendingTasks }}</h2>
                     </div>
                 </a>
             </div>
@@ -66,8 +66,8 @@
                         <i class="fa-solid fa-list-check text-2xl text-red-500"></i>
                     </div>
                     <div class="flex justify-end flex-col">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Total Tasks</h2>
-                        <h2 class="text-2xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalCustomers }}</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Total Tasks</h2>
+                        <h2 class="text-xl font-semibold text-right text-gray-900 dark:text-white">{{ $totalTasks }}</h2>
                     </div>
                 </a>
             </div>

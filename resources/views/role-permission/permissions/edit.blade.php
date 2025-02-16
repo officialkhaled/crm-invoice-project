@@ -28,11 +28,11 @@
                             @method('PUT')
 
                             <div class="mb-3">
-                                <label for="name">Permission Name</label>
+                                <label class="form-label" for="name">Permission Name</label>
                                 <input type="text" name="name" value="{{ $permission->name }}" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-2 mt-4 flex justify-center gap-1">
-                                <button type="submit" class="btn btn-sm btn-success shadow-sm">
+                                <button type="submit" class="btn btn-sm btn-success shadow-sm" onclick="formSubmit()">
                                     <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Update
                                 </button>
                                 <button type="button" class="btn btn-sm btn-warning shadow-sm" onclick="pageRefresh()">

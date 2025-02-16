@@ -26,19 +26,19 @@
                             @csrf
 
                             <div class="mb-3">
-                                <label for="">Name</label>
+                                <label class="form-label">Name</label>
                                 <input type="text" name="name" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-3">
-                                <label for="">Email</label>
+                                <label class="form-label">Email</label>
                                 <input type="text" name="email" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-3">
-                                <label for="">Password</label>
+                                <label class="form-label">Password</label>
                                 <input type="text" name="password" class="form-control rounded-md"/>
                             </div>
                             <div class="mb-3">
-                                <label for="">Roles</label>
+                                <label class="form-label">Roles</label>
                                 <select name="roles[]" class="form-control rounded-md select2" multiple>
                                     <option value="">Select Role</option>
                                     @foreach ($roles as $role)
@@ -47,7 +47,7 @@
                                 </select>
                             </div>
                             <div class="mb-2 mt-4 flex justify-center gap-1">
-                                <button type="submit" class="btn btn-sm btn-success shadow-sm">
+                                <button type="submit" class="btn btn-sm btn-success shadow-sm" onclick="formSubmit()">
                                     <i class="fa-solid fa-floppy-disk opacity-75"></i>&nbsp;&nbsp;Save
                                 </button>
                                 <button type="button" class="btn btn-sm btn-warning shadow-sm" onclick="pageRefresh()">
