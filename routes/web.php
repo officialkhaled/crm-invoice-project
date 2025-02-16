@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
@@ -45,6 +46,15 @@ Route::group(['middleware' => ['role:super-admin|admin']], function () {
         Route::get('{lead}/edit', [LeadController::class, 'edit'])->name('edit');
         Route::put('{lead}', [LeadController::class, 'update'])->name('update');
         Route::delete('{lead}', [LeadController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::group(['prefix' => 'tasks', 'as' => 'tasks.'], function () {
+        Route::get('', [TaskController::class, 'index'])->name('index');
+        Route::get('create', [TaskController::class, 'create'])->name('create');
+        Route::post('/', [TaskController::class, 'store'])->name('store');
+        Route::get('{lead}/edit', [TaskController::class, 'edit'])->name('edit');
+        Route::put('{lead}', [TaskController::class, 'update'])->name('update');
+        Route::delete('{lead}', [TaskController::class, 'destroy'])->name('destroy');
     });
 });
 

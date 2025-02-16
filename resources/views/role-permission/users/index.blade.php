@@ -46,13 +46,12 @@
                                     <td class="text-center">
                                         @can('update user')
                                             <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-sm btn-success shadow-sm">
-                                                <i class="fa-solid fa-pen-to-square opacity-75"></i>&nbsp;&nbsp;Edit
+                                                <i class="fa-solid fa-pen-to-square opacity-75"></i>
                                             </a>
                                         @endcan
-
                                         @can('delete user')
                                             <a href="{{ url('users/'.$user->id.'/delete') }}" class="btn btn-sm btn-danger shadow-sm">
-                                                <i class="fa-solid fa-trash opacity-75"></i>&nbsp;&nbsp;Delete
+                                                <i class="fa-solid fa-trash opacity-75"></i>
                                             </a>
                                         @endcan
                                     </td>

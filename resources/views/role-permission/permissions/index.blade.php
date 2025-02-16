@@ -36,12 +36,12 @@
                                     <td class="text-center">
                                         @can('update permission')
                                             <a href="{{ url('permissions/'.$permission->id.'/edit') }}" class="btn btn-sm btn-success shadow-sm">
-                                                <i class="fa-solid fa-pen-to-square opacity-75"></i>&nbsp;&nbsp;Edit
+                                                <i class="fa-solid fa-pen-to-square opacity-75"></i>
                                             </a>
                                         @endcan
                                         @can('delete permission')
                                             <a href="{{ url('permissions/'.$permission->id.'/delete') }}" class="btn btn-sm btn-danger mx-2 shadow-sm">
-                                                <i class="fa-solid fa-trash opacity-75"></i>&nbsp;&nbsp;Delete
+                                                <i class="fa-solid fa-trash opacity-75"></i>
                                             </a>
                                         @endcan
                                     </td>

@@ -31,6 +31,11 @@
                             {{ __('Leads') }}
                         </x-nav-link>
                     @endcan
+                    @can('View Tasks')
+                        <x-nav-link :href="route('tasks.index')" :active="request()->is('tasks*')">
+                            {{ __('Tasks') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 

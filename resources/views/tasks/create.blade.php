@@ -15,21 +15,21 @@
                 <div class="card">
                     <div class="card-header">
                         <h2 class="d-flex justify-content-between align-items-center">
-                            <b>Create Lead</b>
-                            <a href="{{ route('leads.index') }}" class="btn btn-sm btn-danger float-end shadow-sm">
+                            <b>Create Task</b>
+                            <a href="{{ route('tasks.index') }}" class="btn btn-sm btn-danger float-end shadow-sm">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>
                         </h2>
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('leads.store') }}" method="POST" id="customer-form" enctype="multipart/form-data">
+                        <form action="{{ route('tasks.store') }}" method="POST" id="customer-form" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
+                                        <label for="name">Title</label>
                                         <input type="text" name="name" id="name" class="form-control rounded-md" placeholder="e.g. John Doe"/>
                                         <span class="text-danger"></span>
                                     </div>
@@ -59,15 +59,20 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="source_url">Source URL</label>
-                                        <input type="text" name="source_url" id="source_url" class="form-control rounded-md" placeholder="e.g. www.google.com"/>
+                                        <label for="user_id">Assigned To</label>
+                                        <select name="user_id" id="user_id" class="rounded-md select2 form-select">
+                                            <option value="">Select</option>
+                                            @foreach($users as $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="notes">Notes</label>
-                                        <textarea name="notes" class="form-control rounded-md"
-                                                  id="notes" rows="2" placeholder="e.g. notes"></textarea>
+                                        <label for="description">Description</label>
+                                        <textarea name="description" class="form-control rounded-md"
+                                                  id="description" rows="2" placeholder="e.g. description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -92,3 +97,13 @@
     </div>
 
 </x-app-layout>
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                allowClear: false,
+            });
+        });
+    </script>
+@endsection

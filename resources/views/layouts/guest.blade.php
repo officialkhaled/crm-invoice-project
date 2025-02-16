@@ -16,13 +16,125 @@
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 
+    <style>
+        .opacity-25 {
+            opacity: 25%;
+        }
+
+        .opacity-50 {
+            opacity: 50%;
+        }
+
+        .opacity-75 {
+            opacity: 75%;
+        }
+
+        .btn {
+            font-weight: bold;
+        }
+
+        .btn-primary, .btn-warning, .btn-info, .btn-danger, .btn-secondary, .btn-success {
+            color: #fff !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #025197 !important;
+        }
+
+        .waves-effect {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bg-gradient {
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0)) !important;
+        }
+
+        .btn-success {
+            background-color: #5CB85C !important;
+            border-color: #5CB85C !important;
+        }
+
+        .btn-success:hover {
+            background-color: #367c36 !important;
+            border-color: #367c36 !important;
+        }
+
+        .btn-warning {
+            background-color: #F0AD54 !important;
+            border-color: #F0AD54 !important;
+        }
+
+        .btn-warning:hover {
+            background-color: #d38012 !important;
+            border-color: #d38012 !important;
+        }
+
+        .btn-info {
+            background-color: #61BDE5 !important;
+            border-color: #61BDE5 !important;
+        }
+
+        .btn-info:hover {
+            background-color: #2094c5 !important;
+            border-color: #2094c5 !important;
+        }
+
+        .btn-pdf {
+            background-color: #C14643 !important;
+            border-color: #C14643 !important;
+        }
+
+        .btn-pdf:hover {
+            background-color: #862e2d !important;
+            border-color: #862e2d !important;
+        }
+
+        .btn-excel {
+            background-color: #5CB85C !important;
+            border-color: #5CB85C !important;
+        }
+
+        .btn-excel:hover {
+            background-color: #367c36 !important;
+            border-color: #367c36 !important;
+        }
+
+        .btn-primary {
+            background-color: #0275D8 !important;
+            border-color: #0275D8 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #01447e !important;
+            border-color: #01447e !important;
+        }
+
+        .btn-refresh {
+            background-color: #F0AD4E !important;
+            border-color: #F0AD4E !important;
+        }
+
+        .btn-refresh:hover {
+            background-color: #d38312 !important;
+            border-color: #d38312 !important;
+        }
+    </style>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans text-gray-900 antialiased">
 <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
     <div>
         <a href="/">
-            <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
+            <x-application-logo class="w-20 h-20 fill-current text-red-500"/>
         </a>
     </div>
 
