@@ -13,7 +13,7 @@
                         <h2 class="d-flex justify-content-between align-items-center">
                             <b>Roles</b>
                             @can('create role')
-                                <a href="{{ route('roles.create') }}" class="btn btn-sm btn-primary float-end">
+                                <a href="{{ route('roles.create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add
                                 </a>
                             @endcan
@@ -21,9 +21,9 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
+                            <tr class="table-info">
                                 <th class="text-center" width="10%">ID</th>
                                 <th>Name</th>
                                 <th width="40%" class="text-center">Action</th>
@@ -32,21 +32,21 @@
                             <tbody>
                             @foreach ($roles as $role)
                                 <tr>
-                                    <td class="text-center">{{ $role->id }}</td>
+                                    <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="btn btn-sm btn-warning">
+                                        <a href="{{ url('roles/'.$role->id.'/give-permissions') }}" class="btn btn-sm btn-warning shadow-sm">
                                             <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add / Edit Role Permission
                                         </a>
 
                                         @can('update role')
-                                            <a href="{{ url('roles/'.$role->id.'/edit') }}" class="btn btn-sm btn-success">
+                                            <a href="{{ url('roles/'.$role->id.'/edit') }}" class="btn btn-sm btn-success shadow-sm">
                                                 <i class="fa-solid fa-pen-to-square opacity-75"></i>&nbsp;&nbsp;Edit
                                             </a>
                                         @endcan
 
                                         @can('delete role')
-                                            <a href="{{ url('roles/'.$role->id.'/delete') }}" class="btn btn-sm btn-danger">
+                                            <a href="{{ url('roles/'.$role->id.'/delete') }}" class="btn btn-sm btn-danger shadow-sm">
                                                 <i class="fa-solid fa-trash opacity-75"></i>&nbsp;&nbsp;Delete
                                             </a>
                                         @endcan
