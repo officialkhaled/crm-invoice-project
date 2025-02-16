@@ -20,9 +20,9 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered">
                             <thead>
-                            <tr>
+                            <tr class="table-info">
                                 <th class="text-center" width="3%">ID</th>
                                 <th>Name</th>
                                 <th>Email</th>

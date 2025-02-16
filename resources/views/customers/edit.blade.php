@@ -33,6 +33,7 @@
                                         <label for="name">Name</label>
                                         <input type="text" name="name" id="name" class="form-control rounded-md" placeholder="Enter Name"
                                                value="{{ $customer->name }}"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -40,6 +41,7 @@
                                         <label for="email">Email</label>
                                         <input type="text" name="email" id="email" class="form-control rounded-md" placeholder="Enter Email"
                                                value="{{ $customer->email }}"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -47,6 +49,7 @@
                                         <label for="phone">Phone</label>
                                         <input type="text" name="phone" id="phone" class="form-control rounded-md" placeholder="Enter Phone"
                                                value="{{ $customer->phone }}"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -79,11 +82,14 @@
                                             <div class="form-group">
                                                 <label for="avatar">Avatar</label>
                                                 <input type="file" name="avatar" id="avatar" class="form-control rounded-md" onchange="previewAvatar(event)"/>
+                                                <span class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-center">
-                                            <img src="{{ $customer->avatar ? ('/storage/avatars' . asset($customer->avatar)) : asset('assets/images/default-avatar.png') }}" class="shadow-sm card card-body object-fit-cover"
-                                                 alt="Avatar" width="100px" id="preview_avatar">
+                                            <div class="card card-body shadow-sm">
+                                                <img src="{{ $customer->avatar ? ('/storage' . asset($customer->avatar)) : asset('assets/images/default-avatar.png') }}"
+                                                     class="shadow-md rounded-full object-fit-cover" alt="Avatar" width="100px" id="preview_avatar">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

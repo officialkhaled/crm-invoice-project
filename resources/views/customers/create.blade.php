@@ -31,18 +31,21 @@
                                     <div class="form-group">
                                         <label for="name">Name</label>
                                         <input type="text" name="name" id="name" class="form-control rounded-md" placeholder="Enter Name"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" id="email" class="form-control rounded-md" placeholder="Enter Email"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
                                         <input type="text" name="phone" id="phone" class="form-control rounded-md" placeholder="Enter Phone"/>
+                                        <span class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -74,6 +77,7 @@
                                             <div class="form-group">
                                                 <label for="avatar">Avatar</label>
                                                 <input type="file" name="avatar" id="avatar" class="form-control rounded-md" onchange="previewAvatar(event)"/>
+                                                <span class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex justify-content-center">

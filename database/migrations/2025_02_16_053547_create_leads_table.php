@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('phone')->nullable();
             $table->string('source')->comment(' Website/Referral')->nullable();
             $table->string('source_url')->nullable();
-            $table->tinyInteger('status')->default(1)->comment('1: New, 2: Contacted, 3: Qualified, 4:Lost');
+            $table->enum('status', ['New', 'Contacted', 'Qualified', 'Lost'])->default('New');
             $table->text('notes')->nullable();
 
             $table->timestamps();
