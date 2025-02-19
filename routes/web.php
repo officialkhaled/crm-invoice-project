@@ -8,6 +8,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,6 +18,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::group(['prefix' => '/login', 'as' => 'login.'], function () {
+    Route::get('google', [LoginController::class, 'redirectToGoogle'])->name('google');
+    Route::get('google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+    Route::get('github', [LoginController::class, 'redirectToGithub'])->name('github');
+    Route::get('github/callback', [LoginController::class, 'handleGithubCallback']);
+});
 
 Route::group(['middleware' => ['role:super-admin|admin']], function () {
     Route::resource('permissions', PermissionController::class);

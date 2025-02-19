@@ -4,13 +4,6 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        {{--        @env('local')--}}
-        {{--            <div class="mt-4 mb-4 flex justify-evenly flex-row">--}}
-        {{--                <x-login-link email="admin@gmail.com" label="Admin" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>--}}
-        {{--                <x-login-link email="user@gmail.com" label="Regular User" class="btn btn-sm bg-cyan-600 rounded-md px-2 py-1 text-white hover:bg-cyan-700"/>--}}
-        {{--            </div>--}}
-        {{--        @endenv--}}
-
         <div>
             <x-input-label for="email" :value="__('Email')"/>
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username"/>
@@ -47,4 +40,22 @@
             </x-primary-button>
         </div>
     </form>
+
+    <div class="mt-3 mb-1 flex justify-evenly gap-1 flex-col">
+        <a href="{{ route('login.google') }}" data-toggle="tooltip" data-placement="top" title="Google Sign In!"
+           class="py-2 card w-100 mx-auto shadow-md hover:shadow-lg rounded-3xl">
+            <div class="flex justify-between mx-2 gap-2 items-center">
+                <img src="{{ asset('assets/logos/google.png') }}" class="w-8 rounded-full bg-white p-1" alt="google">
+                <p class="font-bold mr-2">Sign in with Google</p>
+            </div>
+        </a>
+        <a href="{{ route('login.github') }}" data-toggle="tooltip" data-placement="top" title="GitHub Sign In!"
+           class="py-2 card w-100 mx-auto shadow-md hover:shadow-lg rounded-3xl">
+            <div class="flex justify-between mx-2 gap-2 items-center">
+                <img src="{{ asset('assets/logos/github.png') }}" class="w-8 rounded-full bg-white p-1" alt="github">
+                <p class="font-bold mr-2">Sign in with GitHub</p>
+            </div>
+        </a>
+    </div>
+
 </x-guest-layout>
