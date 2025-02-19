@@ -24,7 +24,7 @@
                             <thead>
                             <tr class="table-info">
                                 <th class="text-center" width="3%">ID</th>
-                                <th width="15%">Assigned To</th>
+                                <th width="15%">Assigned User</th>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Due Date</th>
@@ -36,10 +36,10 @@
                             @forelse($tasks as $task)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $task->user_id }}</td>
+                                    <td>{{ $task->user?->name }}</td>
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->description }}</td>
-                                    <td>{{ date_format($task->due_date, 'Ymd') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($task->due_date)->format('jS M, Y') }}</td>
                                     <td>{{ $task->status }}</td>
                                     <td class="d-flex justify-content-center gap-1">
                                         @can('update permission')
