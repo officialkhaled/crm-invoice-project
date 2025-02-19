@@ -31,7 +31,7 @@ class LeadController extends Controller
             'phone' => 'min:11|max:11',
         ]);
 
-        $lead = Lead::create([
+        Lead::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,

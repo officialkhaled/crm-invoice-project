@@ -27,39 +27,16 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="name">Title</label>
-                                        <input type="text" name="name" id="name" class="form-control rounded-md" placeholder="e.g. John Doe"/>
+                                        <label class="form-label" for="title">Title</label>
+                                        <input type="text" name="title" id="title" class="form-control rounded-md" placeholder="e.g. Update all the features"/>
                                         <span class="text-danger"></span>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="email">Email</label>
-                                        <input type="text" name="email" id="email" class="form-control rounded-md" placeholder="e.g. john@mail.com"/>
-                                        <span class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label" for="phone">Phone</label>
-                                        <input type="text" name="phone" id="phone" class="form-control rounded-md" placeholder="e.g. 01572456842"/>
-                                        <span class="text-danger"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label" for="source">Source</label>
-                                        <input type="text" name="source" id="source" class="form-control rounded-md" placeholder="e.g. Website/Referral"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label" for="user_id">Assigned To</label>
+                                        <label class="form-label" for="user_id">Assign User</label>
                                         <select name="user_id" id="user_id" class="rounded-md select2 form-select">
                                             <option value="">Select</option>
                                             @foreach($users as $user)
@@ -68,7 +45,16 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="due_date">Due Date</label>
+                                        <input type="date" name="due_date" id="due_date" class="form-control rounded-md" placeholder="DD-MM-YYYY"/>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="description">Description</label>
                                         <textarea name="description" class="form-control rounded-md"

@@ -33,18 +33,20 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:tasks,email',
-            'phone' => 'min:11|max:11',
+            'title' => 'required',
+            'user_id' => 'required',
+            'due_date' => 'required',
+        ], [
+            'title.required' => 'Title is required!',
+            'user_id.required' => 'User is required!',
+            'due_date.required' => 'Date is required!',
         ]);
 
-        $task = Task::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'source' => $request->source,
-            'source_url' => $request->source_url,
-            'notes' => $request->notes
+        Task::create([
+            'title' => $request->title,
+            'user_id' => $request->user_id,
+            'due_date' => $request->due_date,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('tasks.index')->with('success', 'Task Created Successfully.');
@@ -52,26 +54,36 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
+        $users = User::query()
+            ->latest()
+            ->get();
+
+        $selectedUserId = $task->user_id ?? null;
+
         return view('tasks.edit', [
-            'task' => $task
+            'task' => $task,
+            'users' => $users,
+            'selectedUserId' => $selectedUserId,
         ]);
     }
 
     public function update(Request $request, Task $task)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:tasks,email,' . $task->id,
-            'phone' => 'min:11|max:11',
+            'title' => 'required',
+            'user_id' => 'required',
+            'due_date' => 'required',
+        ], [
+            'title.required' => 'Title is required!',
+            'user_id.required' => 'User is required!',
+            'due_date.required' => 'Date is required!',
         ]);
 
         $task->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'source' => $request->source,
-            'source_url' => $request->source_url,
-            'notes' => $request->notes,
+            'title' => $request->title,
+            'user_id' => $request->user_id,
+            'due_date' => $request->due_date,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('tasks.index')->with('success', 'Task Updated Successfully.');
