@@ -12,7 +12,7 @@
                     <div class="card-header">
                         <h2 class="d-flex justify-content-between align-items-center"><b>Leads</b>
                             @can('create permission')
-                                <a href="{{ route('tasks.create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
+                                <a href="{{ route('tasks.create') }}" class="btn btn-sm bg-indigo-500 text-white hover:bg-indigo-600 float-end shadow-sm">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add
                                 </a>
                             @endcan

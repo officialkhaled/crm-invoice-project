@@ -13,7 +13,7 @@
                         <h2 class="d-flex justify-content-between align-items-center">
                             <b>Users</b>
                             @can('create user')
-                                <a href="{{ url('users/create') }}" class="btn btn-sm btn-primary float-end shadow-sm">
+                                <a href="{{ url('users/create') }}" class="btn btn-sm bg-indigo-500 text-white hover:bg-indigo-600 float-end shadow-sm">
                                     <i class="fa-solid fa-plus opacity-75"></i>&nbsp;&nbsp;Add User
                                 </a>
                             @endcan

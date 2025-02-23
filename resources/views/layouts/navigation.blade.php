@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-3 sm:px-6 lg:px-8 container">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="shrink-0 flex items-center">
@@ -12,16 +12,21 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->is('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('permissions.index')" :active="request()->is('permissions*')">
-                        {{ __('Permissions') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('roles.index')" :active="request()->is('roles*')">
-                        {{ __('Roles') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->is('users*')">
-                        {{ __('Users') }}
-                    </x-nav-link>
-
+                    @can('view permission')
+                        <x-nav-link :href="route('permissions.index')" :active="request()->is('permissions*')">
+                            {{ __('Permissions') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('view role')
+                        <x-nav-link :href="route('roles.index')" :active="request()->is('roles*')">
+                            {{ __('Roles') }}
+                        </x-nav-link>
+                    @endcan
+                    @can('view user')
+                        <x-nav-link :href="route('users.index')" :active="request()->is('users*')">
+                            {{ __('Users') }}
+                        </x-nav-link>
+                    @endcan
                     @can('View Customers')
                         <x-nav-link :href="route('customers.index')" :active="request()->is('customers*')">
                             {{ __('Customers') }}
