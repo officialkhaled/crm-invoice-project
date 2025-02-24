@@ -5,10 +5,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Auth\LoginController;
+
+Route::get('send-mail', [MailController::class, 'index'])->name('send-mail');
 
 Route::get('/', function () {
     return view('welcome');

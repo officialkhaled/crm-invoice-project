@@ -10,8 +10,15 @@
     <div class="pt-6">
         <div class="container mx-auto transition delay-150 duration-500 ease-in-out motion-safe:hover:scale-[1.01]">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <p>{{ Carbon\Carbon::greetings() }}<span class="font-bold">{{ userName() }}</span>! </p>
+                <div class="flex justify-between">
+                    <div class="p-6 text-gray-900">
+                        <p>{{ Carbon\Carbon::greetings() }}<span class="font-bold">{{ userName() }}</span>! </p>
+                    </div>
+                    <div class="p-6">
+                        <a href="{{ route('send-mail') }}" class="bg-indigo-500 hover:bg-indigo-600 rounded-md px-3 py-2 text-white">
+                            <i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;SEND MAIL
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
