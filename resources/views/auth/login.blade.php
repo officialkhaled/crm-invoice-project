@@ -6,14 +6,15 @@
 
         <div>
             <x-input-label for="email" :value="__('Email')"/>
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username"/>
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                          autofocus autocomplete="username" placeholder="Email"/>
             <x-input-error :messages="$errors->get('email')" class="mt-2"/>
         </div>
 
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')"/>
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password"
-                          required autocomplete="current-password"/>
+                          required autocomplete="current-password" placeholder="Password"/>
             <x-input-error :messages="$errors->get('password')" class="mt-2"/>
         </div>
 
@@ -36,7 +37,7 @@
             </a>
 
             <x-primary-button class="ms-3">
-                {{ __('Log in') }}
+                <i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;{{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
@@ -47,6 +48,7 @@
             <div class="flex justify-between mx-2 gap-2 items-center">
                 <img src="{{ asset('assets/logos/google.png') }}" class="w-8 rounded-full bg-white p-1" alt="google">
                 <p class="font-bold mr-2">Sign in with Google</p>
+                <div></div>
             </div>
         </a>
         <a href="{{ route('login.github') }}" data-toggle="tooltip" data-placement="top" title="GitHub Sign In!"
@@ -54,6 +56,7 @@
             <div class="flex justify-between mx-2 gap-2 items-center">
                 <img src="{{ asset('assets/logos/github.png') }}" class="w-8 rounded-full bg-white p-1" alt="github">
                 <p class="font-bold mr-2">Sign in with GitHub</p>
+                <div></div>
             </div>
         </a>
     </div>
