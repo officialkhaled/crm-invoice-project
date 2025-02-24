@@ -9,6 +9,16 @@
 
     <div class="pt-6">
         <div class="container mx-auto">
+            @if (session('status') == 'success')
+                <div class="alert alert-success mt-2">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="pt-6">
+        <div class="container mx-auto">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-between">
                     <div class="p-6 text-gray-900">

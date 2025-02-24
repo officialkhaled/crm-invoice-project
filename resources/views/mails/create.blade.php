@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h2 class="d-flex justify-content-between align-items-center">
-                            <b>Create Mail</b>
+                            <b>Send Mail</b>
                             <a href="{{ route('dashboard') }}" class="btn btn-sm btn-danger float-end shadow-sm">
                                 <i class="fa-solid fa-circle-chevron-left opacity-75"></i>&nbsp;&nbsp;Back
                             </a>
@@ -29,29 +29,28 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="to_mail">Sending E-mail Address</label>
-                                        <input type="text" name="to_mail" id="to_mail" class="form-control rounded-md" placeholder="example@gmail.com"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label class="form-label" for="title">Title</label>
                                         <input type="text" name="title" id="title" class="form-control rounded-md" placeholder="Title"/>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row mt-2">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="subject">Subject</label>
                                         <input type="text" name="subject" id="subject" class="form-control rounded-md" placeholder="Subject"/>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mt-2">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="body">Body</label>
                                         <textarea name="body" id="body" rows="2" class="form-control rounded-md" placeholder="Body"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file">File</label>
+                                        <input type="file" class="form-control file-input rounded-md">
                                     </div>
                                 </div>
                             </div>

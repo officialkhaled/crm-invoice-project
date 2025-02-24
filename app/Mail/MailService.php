@@ -23,7 +23,7 @@ class MailService extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            to: $this->mailData['to_mail'],
+//            to: $this->mailData['to_mail'],
             subject: $this->mailData['subject'],
         );
     }
