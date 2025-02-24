@@ -501,6 +501,116 @@
             --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to)
         }
 
+        .opacity-25 {
+            opacity: 25%;
+        }
+
+        .opacity-50 {
+            opacity: 50%;
+        }
+
+        .opacity-75 {
+            opacity: 75%;
+        }
+
+        .btn {
+            font-weight: bold;
+        }
+
+        .btn-primary, .btn-warning, .btn-info, .btn-danger, .btn-secondary, .btn-success {
+            color: #fff !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #025197 !important;
+        }
+
+        .waves-effect {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bg-gradient {
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0)) !important;
+        }
+
+        .btn-success {
+            background-color: #5CB85C !important;
+            border-color: #5CB85C !important;
+        }
+
+        .btn-success:hover {
+            background-color: #367c36 !important;
+            border-color: #367c36 !important;
+        }
+
+        .btn-warning {
+            background-color: #F0AD54 !important;
+            border-color: #F0AD54 !important;
+        }
+
+        .btn-warning:hover {
+            background-color: #d38012 !important;
+            border-color: #d38012 !important;
+        }
+
+        .btn-info {
+            background-color: #61BDE5 !important;
+            border-color: #61BDE5 !important;
+        }
+
+        .btn-info:hover {
+            background-color: #2094c5 !important;
+            border-color: #2094c5 !important;
+        }
+
+        .btn-pdf {
+            background-color: #C14643 !important;
+            border-color: #C14643 !important;
+        }
+
+        .btn-pdf:hover {
+            background-color: #862e2d !important;
+            border-color: #862e2d !important;
+        }
+
+        .btn-excel {
+            background-color: #5CB85C !important;
+            border-color: #5CB85C !important;
+        }
+
+        .btn-excel:hover {
+            background-color: #367c36 !important;
+            border-color: #367c36 !important;
+        }
+
+        .btn-primary {
+            background-color: #0275D8 !important;
+            border-color: #0275D8 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #01447e !important;
+            border-color: #01447e !important;
+        }
+
+        .btn-refresh {
+            background-color: #F0AD4E !important;
+            border-color: #F0AD4E !important;
+        }
+
+        .btn-refresh:hover {
+            background-color: #d38312 !important;
+            border-color: #d38312 !important;
+        }
+
         .bg-center {
             background-position: center
         }
@@ -772,6 +882,8 @@
             }
         }
     </style>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased">
 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-indigo-500 selection:text-white">
@@ -802,8 +914,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 <a href="#" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-indigo-500">
                     <div>
-                        <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                        <div class="h-16 w-16 bg-indigo-50 dark:bg-indigo-800/20 flex items-center justify-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-indigo-500">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
                             </svg>
                         </div>
@@ -818,8 +930,8 @@
 
                 <a href="#" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-indigo-500">
                     <div>
-                        <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                        <div class="h-16 w-16 bg-indigo-50 dark:bg-indigo-800/20 flex items-center justify-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-indigo-500">
                                 <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
                             </svg>
                         </div>
