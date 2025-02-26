@@ -11,8 +11,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Auth\LoginController;
 
-//Route::get('send-mail', [MailController::class, 'sendMail'])->name('send-mail');
-
 Route::group(['prefix' => 'mail', 'as' => 'mail.'], function () {
     Route::get('', [MailController::class, 'index'])->name('index');
     Route::get('create', [MailController::class, 'create'])->name('create');
