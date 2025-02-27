@@ -10,9 +10,13 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Auth\LoginController;
 
+Route::fallback(function () {
+    return view('errors.error-404');
+});
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
